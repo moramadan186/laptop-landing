@@ -189,7 +189,7 @@ header {
 	.cta-add{margin: 30px 0px;}
 	
 }
-.colorList{padding: 7px 10px 0;margin:0;list-style: none;position: fixed; top: 60px; right: 10px;z-index: 10;}
+.colorList{padding: 7px 10px 0;margin:0;list-style: none;position: fixed; top: 50px; right: 15px;z-index: 10;}
 .colorList li{
 	display: block;
     width: 20px; height: 20px;
