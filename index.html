@@ -6,14 +6,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet" />
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/white-theme.css" />
 	<title>Laptop Page</title>
 </head>
 
 <body>
 	<header>
-		<span id="openSpan"style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+		<ul class="colorList">
+			<li path="css/default-theme.css" style="background-color: rgb(30,30,30);"></li>
+			<li path="css/white-theme.css" style="background-color: rgb(255, 255, 255); border: 0.1px solid rgb(173, 173, 173);"></li>
+		</ul>
+		<span id="openSpan" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 		<ul class="nav-links" id="mySidenav">
+
 			<li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
 			<li class="logo-container">
 				<img src="./img/logo.svg" alt="logo" />
@@ -22,6 +28,7 @@
 			<li><a class="nav-link" href="#">Specs</a></li>
 			<li><a class="nav-link" href="#">Products</a></li>
 			<li><a class="nav-link" href="#">Contact</a></li>
+			
 		</ul>
 		<div class="cart">
 			<img src="./img/cart.svg" alt="cart" />
@@ -60,11 +67,19 @@
 	</main>
 	<script>
 		function openNav() {
-  		document.getElementById("mySidenav").style.width = "70%";
+			document.getElementById("mySidenav").style.width = "70%";
 		}
 
 		function closeNav() {
-		document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("mySidenav").style.width = "0";
+		}
+		document.querySelectorAll(".colorList li")[0].onclick = function(){
+			console.log(document.querySelector("link[href*='theme']"))
+			document.querySelector("link[href*='theme']").setAttribute("href",`${this.getAttribute("path")}`);
+		}
+		document.querySelectorAll(".colorList li")[1].onclick = function(){
+			console.log(document.querySelector("link[href*='theme']"))
+			document.querySelector("link[href*='theme']").setAttribute("href",`${this.getAttribute("path")}`);
 		}
 	</script>
 </body>
