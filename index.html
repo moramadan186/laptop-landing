@@ -9,14 +9,25 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/white-theme.css" />
 	<title>Laptop Page</title>
+	<script src="https://kit.fontawesome.com/4a7b5fca02.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+	<div class="container-icons-outer">
+			<div id="icons" class="icons">
+				<div id="icon1" class="icon icon1">
+					<i class="fas fa-moon"></i>
+				</div>
+				<div id="icon2" class="icon icon2">
+					<i class="fas fa-sun"></i>
+				</div>
+			</div>
+	</div>
 	<header>
-		<ul class="colorList">
-			<li path="css/default-theme.css" style="background-color: rgb(30,30,30);"></li>
-			<li path="css/white-theme.css" style="background-color: rgb(255, 255, 255); border: 0.1px solid rgb(173, 173, 173);"></li>
-		</ul>
+			<!-- <ul class="colorList">
+				<li path="css/default-theme.css" style="background-color: rgb(30,30,30);"></li>
+				<li path="css/white-theme.css" style="background-color: rgb(255, 255, 255); border: 0.1px solid rgb(173, 173, 173);"></li>
+			</ul> -->
 		<span id="openSpan" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 		<ul class="nav-links" id="mySidenav">
 
@@ -28,7 +39,7 @@
 			<li><a class="nav-link" href="#">Specs</a></li>
 			<li><a class="nav-link" href="#">Products</a></li>
 			<li><a class="nav-link" href="#">Contact</a></li>
-			
+
 		</ul>
 		<div class="cart">
 			<img src="./img/cart.svg" alt="cart" />
@@ -73,14 +84,41 @@
 		function closeNav() {
 			document.getElementById("mySidenav").style.width = "0";
 		}
-		document.querySelectorAll(".colorList li")[0].onclick = function(){
-			console.log(document.querySelector("link[href*='theme']"))
-			document.querySelector("link[href*='theme']").setAttribute("href",`${this.getAttribute("path")}`);
-		}
-		document.querySelectorAll(".colorList li")[1].onclick = function(){
-			console.log(document.querySelector("link[href*='theme']"))
-			document.querySelector("link[href*='theme']").setAttribute("href",`${this.getAttribute("path")}`);
-		}
+		// document.querySelectorAll(".colorList li")[0].onclick = function () {
+		// 	console.log(document.querySelector("link[href*='theme']"))
+		// 	document.querySelector("link[href*='theme']").setAttribute("href", `${this.getAttribute("path")}`);
+		// }
+		// document.querySelectorAll(".colorList li")[1].onclick = function () {
+		// 	console.log(document.querySelector("link[href*='theme']"))
+		// 	document.querySelector("link[href*='theme']").setAttribute("href", `${this.getAttribute("path")}`);
+		// }
+		// DOM elements
+		const body = document.querySelector("body");
+		const icons = document.querySelector("#icons");
+		const icon1 = document.querySelector("#icon1");
+		const icon2 = document.querySelector("#icon2");
+		// Event listener on button
+		console.log(icon1)
+		console.log(body)
+		console.log(icons)
+		icon1.onclick = () =>{
+			body.classList.add("dark");
+			// const rotation = parseInt(
+			// 	getComputedStyle(icons).getPropertyValue("--rotation")
+			// );
+			// icons.style.setProperty("--rotation", rotation - 180);
+			icons.style.transform="rotateY(180deg)";
+			console.log(icon1)
+		};
+		icon2.onclick = () =>{
+			body.classList.remove("dark");
+			// const rotation = parseInt(
+			// 	getComputedStyle(icons).getPropertyValue("--rotation")
+			// );
+			// icons.style.setProperty("--rotation", rotation - 180);
+			icons.style.transform="rotateY(0deg)";
+		};
+
 	</script>
 </body>
 
